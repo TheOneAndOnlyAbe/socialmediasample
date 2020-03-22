@@ -8,13 +8,31 @@ const express        = require("express"),
       methodOverride = require("method-override"),   // This is good for additional routes, not just GET or PUT
       myPort         = process.env.PORT || 8000,     // These two make it easier to work in a local environment
       myIP           = process.env.IP   || "localhost",
-      indexRoute     = require("./routes/index.js"); // Gets the index routes
+      indexRoute     = require("./routes/index.js"), // Gets the index routes
+      Exercise       = require("./models/exercise.js");
+
+// Data for testing
+// var newExercise = {
+//   name : "Pushup",
+//   reps : "10",
+//   difficulty : "beginner",
+//   instructions : "https://43nnuk1fz4a72826eo14gwfb-wpengine.netdna-ssl.com/wp-content/uploads/2017/03/Basic-Pushup.jpg"
+// }
+//
+// Exercise.create(newExercise, (err, madeExercise) => {
+//   if(err){
+//       console.log(err);
+//   }
+//   else{
+//       console.log("Exercise was made: " + madeExercise);
+//   }
+// });
 
 // Use flash message
 app.use(flash());
 
 // Connect to the Mongoose Database
-mongoose.connect("mongodb://" + process.env.MDBUSER + ":" + process.env.MDBPASS + "@ds263436.mlab.com:63436/socialmediatest",
+mongoose.connect("mongodb://abemoreno:20User01@ds263436.mlab.com:63436/socialmediatest",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -35,5 +53,5 @@ app.use(indexRoute);
 
 // Essential stuff
 app.listen(myPort, myIP, function(){
-    console.log("Fish Selling Site has commenced...");
+    console.log("Exerice generator has executed order 66...");
 });

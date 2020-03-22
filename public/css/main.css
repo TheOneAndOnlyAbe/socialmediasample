@@ -1,57 +1,96 @@
-@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-.darken {
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+/* Learned this through https://www.w3schools.com/css/css3_variables.asp */
+:root {
+  --black: #0D0106;
+  --lighterBlue: #657ED4;
+  --lighterBlueForButton: #4839AF;
+  --darkerBlue: #3626A7;
+  --red: #FF331F;
+  --white: #FBFBFF;
 }
 
-.flexCenter {
+.container {
   width: 100%;
   height: 100%;
   display: flex;
+}
+
+.container nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex-basis: 20%;
+  background: var(--darkerBlue);
+  color: var(--white);
+}
+
+.container nav #navBottom,
+.container nav #navTop {
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.container nav #navTop,
+.container nav #navBottom {
   justify-content: center;
   align-items: center;
 }
 
-#landing {
+.container nav #navTop p {
+  margin-bottom: 10px;
+}
+
+.container #navBottom {
+  width: 100%
+}
+
+.container nav #navBottom a {
+  width: 100%;
+  height: 100%;
+  padding: 20px 0;
+  text-align: center;
+  text-decoration: none;
+  color: var(--white);
+  background-color: var(--darkerBlue);
+  transition: 0.3s background-color;
+}
+
+.container nav #navBottom a:hover {
+  background-color: var(--lighterBlueForButton);
+  transition: 0.3s background-color;
+}
+
+.container #workouts {
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  flex-basis: 80%;
+  background-color: var(--black);A
+}
+
+.container nav #navBottom #chosen {
+  background-color: var(--lighterBlueForButton);
+}
+
+.exerciseContainer {
+  width: 30%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--white);
+  border-radius: 3px;
+}
+
+#wholePage {
   width: 100%;
   height: 100vh;
-  background-image: url("../images/workout.jpg");
-  background-position: center;
-  font-family: "Oswald";
-  color: white;
-}
-
-#landing .flexCenter {
-  flex-direction: column;
-}
-
-#landingTitle {
-  font-size: 70px;
-}
-
-#landingText {
-  font-size: 25px;
-}
-
-#landing a {
-  margin-top: 10px;
-  padding: 5px 35px;
-  text-decoration: none;
-  color: white;
-  background: #4839AF;
-  border-radius: 3px;
-  transition: 0.3s background;
-}
-
-#landing a:hover {
-  background-color: #3626A7;
-  transition: 0.3s background;
 }

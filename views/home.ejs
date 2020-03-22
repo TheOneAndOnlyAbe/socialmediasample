@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Exercise Generator | Landing</title>
+
+    <link rel="stylesheet" href="/css/main.css">
+    <script src="https://kit.fontawesome.com/a6e87818b4.js" crossorigin="anonymous"></script> <!-- Includes icons from Font Awesome -->
+  </head>
+  <body>
+
+    <div id="wholePage">
+      <div class="container">
+        <nav>
+          <div id="navTop">
+            <p>Workout Generator</p>
+            <i class="fas fa-dumbbell"></i>
+          </div>
+          <div id="navBottom">
+            <a href="/home" id="chosen">Home</a>
+            <a href="/addExercises">Add An Exercise</a>
+            <a href="/generateWorkout">Generate A Workout</a>
+          </div>
+        </nav>
+        <div id="workouts">
+          <% for(let i = 0; i < exercises.length; i++){ %>
+            <div class="exerciseContainer">
+              <p><%= exercises[i].name %></p>
+              <p>Reps: <%= exercises[i].reps %></p>
+              <p>Diffuculty: <%= exercises[i].difficulty %></p>
+              <a href="<%= exercises[i].instructions %>" target="_blank">Instructions</a>
+            </div>
+          <% } %>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
