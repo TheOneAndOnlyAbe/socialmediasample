@@ -9,6 +9,7 @@ const express        = require("express"),
       myPort         = process.env.PORT || 8000,     // These two make it easier to work in a local environment
       myIP           = process.env.IP   || "localhost",
       indexRoute     = require("./routes/index.js"), // Gets the index routes
+      exerciseRoute  = require("./routes/exercises.js"),
       Exercise       = require("./models/exercise.js");
 
 // Data for testing
@@ -50,6 +51,11 @@ app.use(methodOverride("_method"));
 
 // Make the application use the index routes
 app.use(indexRoute);
+app.use(exerciseRoute);
+
+app.get("*", (req, res) => {
+  res.redirect("/home");
+});
 
 // Essential stuff
 app.listen(myPort, myIP, function(){
