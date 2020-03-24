@@ -33,7 +33,7 @@ const express        = require("express"),
 app.use(flash());
 
 // Connect to the Mongoose Database
-mongoose.connect("mongodb://abemoreno:20User01@ds263436.mlab.com:63436/socialmediatest",
+mongoose.connect("mongodb://" + process.env.MDBUSER + ":" + process.env.MDBPASS + "@ds263436.mlab.com:63436/socialmediatest",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true
