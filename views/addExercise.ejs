@@ -12,21 +12,26 @@
     <div id="wholePage">
       <div class="container">
         <nav>
+
           <div id="navTop">
             <p>Workout Generator</p>
             <i class="fas fa-dumbbell"></i>
           </div>
+
           <div id="navBottom">
             <a href="/home">Home</a>
             <a href="/addExercises" id="chosen">Add An Exercise</a>
             <a href="/generateWorkout">Generate A Workout</a>
           </div>
+          
         </nav>
+
         <div id="addExercise">
           <form id="form" action="/addExercise" method="POST" autocomplete="off">
             <p id="title">Add An Exercise</p>
             <input type="text" name="name" placeholder="Name Of Exercise">
             <input type="number" name="reps" placeholder="Reps">
+
             <div id="selectHolder">
               <label for="select">Difficulty: </label>
               <select name="difficulty" id="select">
@@ -36,23 +41,28 @@
                 <option value="Expert">Expert</option>
               </select>
             </div>
+
             <input type="text" name="instructions" placeholder="http://instructionImage.etc">
+
             <div class="hidden">
               <input id="chestCheck" type="checkbox" name="chest">
               <input id="backCheck" type="checkbox" name="back">
               <input id="absCheck" type="checkbox" name="abs">
               <input id="legsCheck" type="checkbox" name="legs">
             </div>
+
             <div id="buttonInputs">
-              <button type="button" id="chest" onclick="myFunction(0)">Chest</button>
-              <button type="button" id="back" onclick="myFunction(1)">Back</button>
-              <button type="button" id="abs" onclick="myFunction(2)">Abs</button>
-              <button type="button" id="legs" onclick="myFunction(3)">Legs</button>
+              <button type="button" id="chest" onclick="choosePart(0)">Chest</button>
+              <button type="button" id="back" onclick="choosePart(1)">Back</button>
+              <button type="button" id="abs" onclick="choosePart(2)">Abs</button>
+              <button type="button" id="legs" onclick="choosePart(3)">Legs</button>
             </div>
+
             <div id="buttonHolder">
               <a href="/home"><i class="fas fa-arrow-left"></i> Go Home</a>
               <button type="submit">Submit</button>
             </div>
+
           </form>
         </div>
       </div>

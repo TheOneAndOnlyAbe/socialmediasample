@@ -6,6 +6,7 @@ router.get("/", (req, res) => {
   res.render("landing");
 });
 
+// Finds all of the exercises. This will eventually be changed to finding all workouts
 router.get("/home", (req, res) => {
   Exercise.find({}, (err, exercises) => {
     if(err){

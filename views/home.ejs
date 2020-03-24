@@ -12,16 +12,20 @@
     <div id="wholePage">
       <div class="container">
         <nav>
+
           <div id="navTop">
             <p>Workout Generator</p>
             <i class="fas fa-dumbbell"></i>
           </div>
+
           <div id="navBottom">
             <a href="/home" id="chosen">Home</a>
             <a href="/addExercise">Add An Exercise</a>
             <a href="/generateWorkout">Generate A Workout</a>
           </div>
+          
         </nav>
+
         <div id="workouts">
           <% if(exercises.length > 0) { %>
             <div class="fitContent">
@@ -35,6 +39,7 @@
                 </div>
               <% } %>
             </div>
+
           <% } else {%>
             <div id="noWorkout">
               <p>There are currently no workouts!</p>

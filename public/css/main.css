@@ -41,7 +41,7 @@
 
 .exerciseContainer {
   width: 30%;
-  height: 100px;
+  height: 150px;
   margin-top: 20px;
   display: flex;
   flex-direction: column;
